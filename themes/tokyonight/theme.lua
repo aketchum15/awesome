@@ -95,12 +95,12 @@ theme.tasklist_fg_urgent = colors.fg_dark
 -- }}}
 
 -- {{{ Layout
-theme.layout_fairv      = themes_path .. "tokyonight/layouts/fairv.png"
-theme.layout_fairh      = themes_path .. "tokyonight/layouts/fairh.png"
-theme.layout_tile       = themes_path .. "tokyonight/layouts/tile.png"
-theme.layout_tilebottom = themes_path .. "tokyonight/layouts/tilebottom.png"
-theme.layout_tileleft   = themes_path .. "tokyonight/layouts/tileleft.png"
-theme.layout_tiletop    = themes_path .. "tokyonight/layouts/tiletop.png"
+theme.layout_fairv      = themes_path .. "/tokyonight/layouts/fairv.png"
+theme.layout_fairh      = themes_path .. "/tokyonight/layouts/fairh.png"
+theme.layout_tile       = themes_path .. "/tokyonight/layouts/tile.png"
+theme.layout_tilebottom = themes_path .. "/tokyonight/layouts/tilebottom.png"
+theme.layout_tileleft   = themes_path .. "/tokyonight/layouts/tileleft.png"
+theme.layout_tiletop    = themes_path .. "/tokyonight/layouts/tiletop.png"
 
 --theme.layout_cornerne   = themes_path .. "tokyonight/layouts/cornerne.png"
 --theme.layout_cornernw   = themes_path .. "tokyonight/layouts/cornernw.png"
