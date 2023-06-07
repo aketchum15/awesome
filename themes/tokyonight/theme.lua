@@ -4,7 +4,7 @@ local dpi = require("beautiful.xresources").apply_dpi
 
 -- {{{ main
 local theme = {}
-theme.wallpaper = themes_path .. "tokyonight/wallpaper.jpg"
+theme.wallpaper = themes_path .. "/tokyonight/wallpaper.jpg"
 -- }}}
 
 -- {{{ Styles
