@@ -112,14 +112,24 @@ local cw = calendar_widget({
     radius = 8,
 })
 
-mytextclock:connect_signal("mouse::enter",
+mytextclock:connect_signal("mouse::enter", cw.toggle )
+mytextclock:connect_signal("mouse::leave", cw.toggle )
+
+local clicked = false
+
+mytextclock:connect_signal("button::press",
     function()
-        cw.toggle()
+        if clicked then
+	    mytextclock:connect_signal('mouse::enter', cw.toggle )
+	    mytextclock:connect_signal('mouse::leave', cw.toggle )
+	    clicked = not clicked
+        else
+	    mytextclock:disconnect_signal('mouse::enter', cw.toggle )
+	    mytextclock:disconnect_signal('mouse::leave', cw.toggle )
+	    clicked = not clicked
+        end
     end)
-mytextclock:connect_signal("mouse::leave",
-    function()
-        cw.toggle()
-    end)
+
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -223,7 +233,8 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             spotify_widget({
-                font = "Inconsolata Nerd Font Mono 13"
+                font = 'Inconsolata Nerd Font Mono Bold 11',
+		sp_bin = '~/.local/bin/sp'
             }),
             wibox.widget.systray(),
             mytextclock,
