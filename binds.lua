@@ -5,6 +5,7 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 
 local terminal = "alacritty"
 local browser = os.getenv("BROWSER") or "chromium"
+local calculator = 'rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo -n \'{result}\' | xclip"'
 
 local modkey ='Mod4'
 -- {{{ Key bindings
@@ -58,8 +59,11 @@ globalkeys = gears.table.join(
               {description = "open a browser", group = "launcher"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
-    awful.key({ modkey }, "d", function () awful.spawn("dmenu_run") end,
-              {description = "dmenu run",  group = "launcher"}),
+    awful.key({ modkey }, "d", function () awful.spawn("rofi -show drun") end,
+              {description = "rofi run",  group = "launcher"}),
+    awful.key({ modkey }, "c", function () awful.spawn(calculator) end,
+               {description = 'show a calculator', group = 'launcher'}),
+
 
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),
