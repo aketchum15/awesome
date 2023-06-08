@@ -23,6 +23,7 @@ naughty.config.defaults['icon_size'] = 100
 
 local calendar_widget = require("awesome-wm-widgets.calendar-widget.calendar")
 local spotify_widget = require("awesome-wm-widgets.spotify-widget.spotify")
+Inspect =  require('inspect')
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to

@@ -1,5 +1,7 @@
 local gears = require("gears")
 local awful = require("awful")
+local naughty = require("naughty")
+
 local hotkeys_popup = require("awful.hotkeys_popup")
                       require("awful.hotkeys_popup.keys")
 
@@ -16,8 +18,6 @@ globalkeys = gears.table.join(
               {description = "view previous", group = "tag"}),
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext,
               {description = "view next", group = "tag"}),
-    awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
-              {description = "go back", group = "tag"}),
 
     awful.key({ modkey,           }, "j",
         function ()
@@ -203,7 +203,17 @@ for i = 1, 9 do
                           end
                       end
                   end,
-                  {description = "toggle focused client on tag #" .. i, group = "tag"})
+                  {description = "toggle focused client on tag #" .. i, group = "tag"}),
+
+    awful.key({ modkey,           }, "Escape",
+    function ()
+            local screens = {}
+            for s in screen do
+                table.insert(screens, s)
+            end
+            naughty.destroy_all_notifications(screens, naughty.notificationClosedReason.dismissedByUser)
+    end,
+              {description = "go back", group = "tag"})
     )
 end
 
