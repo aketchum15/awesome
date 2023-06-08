@@ -78,6 +78,7 @@ theme.border_marked = colors.green
 theme.taglist_bg        = colors.bg_dark
 theme.taglist_bg_focus  = colors.magenta
 theme.taglist_bg_urgent = colors.orange
+theme.taglist_bg_occupied = colors.bg_visual
 
 theme.taglist_fg        = colors.fg
 theme.taglist_fg_focus  = colors.fg_gutter
